@@ -31,12 +31,12 @@ GVectorTest >> test2DVector [
 GVectorTest >> testAngleWith [
 	vector := {2 . 0} asGVector.
 	self assert: (vector angleWith: vector) isZero.
-	self assert: (vector angleWith: {2 . 1} asGVector) equals: 0.4636476090008063 radians.
-	self assert: ({2 . 1} asGVector angleWith: vector) equals: -0.4636476090008063 radians.
-	self assert: (vector angleWith: {2 . 2} asGVector) equals: 0.7853981633974483 radians.
-	self assert: ({2 . 2} asGVector angleWith: vector) equals: -0.7853981633974483 radians.
-	self assert: (vector angleWith: {1 . 2} asGVector) equals: 1.1071487177940922 radians.
-	self assert: ({1 . 2} asGVector angleWith: vector) equals: -1.1071487177940922 radians
+	self assert: (vector angleWith: {2 . 1} asGVector) equals: 0.4636476090008063 rads.
+	self assert: ({2 . 1} asGVector angleWith: vector) equals: -0.4636476090008063 rads.
+	self assert: (vector angleWith: {2 . 2} asGVector) equals: 0.7853981633974483 rads.
+	self assert: ({2 . 2} asGVector angleWith: vector) equals: -0.7853981633974483 rads.
+	self assert: (vector angleWith: {1 . 2} asGVector) equals: 1.1071487177940922 rads.
+	self assert: ({1 . 2} asGVector angleWith: vector) equals: -1.1071487177940922 rads
 ]
 
 { #category : #tests }
@@ -72,17 +72,17 @@ GVectorTest >> testMultiplication [
 { #category : #tests }
 GVectorTest >> testNonOrientedAngleWith [
 	vector := {2 . 9 . -3} asGVector.
-	self assert: (vector nonOrientedAngleWith: {-3 . -4 . 8} asGVector) equals: 2.37687 radians.
+	self assert: (vector nonOrientedAngleWith: {-3 . -4 . 8} asGVector) equals: 2.37687 rads.
 
 	vector := {5 . 24} asGVector.
-	self assert: (vector nonOrientedAngleWith: {1 . 3} asGVector) equals: 0.11635 radians.
+	self assert: (vector nonOrientedAngleWith: {1 . 3} asGVector) equals: 0.11635 rads.
 
 	vector := {2 . 0} asGVector.
 	self assert: (vector nonOrientedAngleWith: vector) isZero.
-	self assert: (vector nonOrientedAngleWith: {2 . 1} asGVector) equals: 0.4636476090008063 radians.
-	self assert: ({2 . 1} asGVector nonOrientedAngleWith: vector) equals: 0.4636476090008063 radians.
-	self assert: (vector nonOrientedAngleWith: {2 . 2} asGVector) equals: 0.7853981633974483 radians.
-	self assert: ({2 . 2} asGVector nonOrientedAngleWith: vector) equals: 0.7853981633974483 radians.
-	self assert: (vector nonOrientedAngleWith: {1 . 2} asGVector) equals: 1.1071487177940922 radians.
-	self assert: ({1 . 2} asGVector nonOrientedAngleWith: vector) equals: 1.1071487177940922 radians
+	self assert: (vector nonOrientedAngleWith: {2 . 1} asGVector) equals: 0.4636476090008063 rads.
+	self assert: ({2 . 1} asGVector nonOrientedAngleWith: vector) equals: 0.4636476090008063 rads.
+	self assert: (vector nonOrientedAngleWith: {2 . 2} asGVector) equals: 0.7853981633974483 rads.
+	self assert: ({2 . 2} asGVector nonOrientedAngleWith: vector) equals: 0.7853981633974483 rads.
+	self assert: (vector nonOrientedAngleWith: {1 . 2} asGVector) equals: 1.1071487177940922 rads.
+	self assert: ({1 . 2} asGVector nonOrientedAngleWith: vector) equals: 1.1071487177940922 rads
 ]

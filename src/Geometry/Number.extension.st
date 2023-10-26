@@ -16,8 +16,9 @@ Number >> degrees [
 ]
 
 { #category : #'*Geometry' }
-Number >> divideWithAngle: aGAngle [ 
-	^ (aGAngle radians / self) radians
+Number >> divideWithAngle: aGAngle [
+
+	^ (aGAngle rads / self) rads
 ]
 
 { #category : #'*Geometry' }
@@ -26,8 +27,9 @@ Number class >> epsilon [
 ]
 
 { #category : #'*Geometry' }
-Number >> multiplyWithAngle: aGAngle [ 
-	^ (aGAngle radians * self) radians
+Number >> multiplyWithAngle: aGAngle [
+
+	^ (aGAngle rads * self) rads
 ]
 
 { #category : #'*Geometry' }
@@ -36,7 +38,7 @@ Number >> multiplyWithVector: aGVector [
 ]
 
 { #category : #'*Geometry' }
-Number >> radians [
+Number >> rads [
 	^ GAngle radians: self
 ]
 

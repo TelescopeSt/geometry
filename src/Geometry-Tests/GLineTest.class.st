@@ -17,7 +17,7 @@ GLineTest >> testAngleWith [
 	| line2 |
 	line := GLine through: 0 , 0 and: 5 , 24.
 	line2 := GLine through: 3 , 4 and: 4 , 7.
-	self assert: (line angleWith: line2) equals: -0.11635 radians 
+	self assert: (line angleWith: line2) equals: -0.11635 rads 
 ]
 
 { #category : #tests }

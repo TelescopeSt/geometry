@@ -151,7 +151,7 @@ GArc >> intersectionsWithLine: aGLine [
 
 { #category : #accessing }
 GArc >> length [
-	^ self angle radians * self radius
+	^ self angle rads * self radius
 ]
 
 { #category : #accessing }

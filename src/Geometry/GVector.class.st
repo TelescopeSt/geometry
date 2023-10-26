@@ -158,5 +158,5 @@ GVector >> nonOrientedAngleWith: aGVector [
 	^ ([ ((self dotProduct: aGVector) / (self length * aGVector length)) arcCos ]
 		on: DomainError
 		do:
-			[ "Sometimes we can get a Domain Error because of some missprecision of floats... In that case we will reduce the precision to get a result" ((self dotProduct: aGVector) / (self length * aGVector length) roundTo: 0.00000000000001) arcCos ]) radians
+			[ "Sometimes we can get a Domain Error because of some missprecision of floats... In that case we will reduce the precision to get a result" ((self dotProduct: aGVector) / (self length * aGVector length) roundTo: 0.00000000000001) arcCos ]) rads
 ]
