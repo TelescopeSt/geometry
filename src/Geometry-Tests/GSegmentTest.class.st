@@ -17,7 +17,7 @@ GSegmentTest >> testAngleWith [
 	| segment2 |
 	segment := GSegment with: 0 , 0 with: 5 , 24.
 	segment2 := GSegment with: 3 , 4 with: 4 , 7.
-	self assert: (segment angleWith: segment2) equals: -0.11635 radians
+	self assert: (segment angleWith: segment2) equals: -0.11635 rads
 ]
 
 { #category : #tests }

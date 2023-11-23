@@ -67,9 +67,9 @@ GAngle class >> degrees: anInteger [
 { #category : #'class initialization' }
 GAngle class >> initialize [
 	TwoPi := 2π.
-	ZeroAngle := 0 radians.
-	RightAngle := 0.5π radians.
-	StraightAngle := 1π radians
+	ZeroAngle := 0 rads.
+	RightAngle := 0.5π rads.
+	StraightAngle := 1π rads
 ]
 
 { #category : #'instance creation' }
@@ -77,6 +77,11 @@ GAngle class >> radians: aNumber [
 	^ self new
 		initializeWith: aNumber;
 		yourself
+]
+
+{ #category : #'instance creation' }
+GAngle class >> rads: aNumber [
+	^ self radians: aNumber
 ]
 
 { #category : #arithmetic }
@@ -101,7 +106,7 @@ GAngle >> / anInteger [
 
 { #category : #comparison }
 GAngle >> < aGAngle [ 
-	^ self radians < aGAngle radians
+	^ self rads < aGAngle rads
 ]
 
 { #category : #comparison }
@@ -116,7 +121,7 @@ GAngle >> = anObject [
 	self == anObject ifTrue: [ ^ true ].
 	self class = anObject class ifFalse: [ ^ false ].
 
-	^ (radians - anObject radians) =~ 0 or: [ (radians - anObject radians) =~ TwoPi ]
+	^ (radians - anObject rads) =~ 0 or: [ (radians - anObject rads) =~ TwoPi ]
 ]
 
 { #category : #comparison }
@@ -137,22 +142,22 @@ GAngle >> adaptToNumber: anInteger andSend: aString [
 
 { #category : #arithmetic }
 GAngle >> addWithAngle: aGAngle [ 
-	^ (self radians + aGAngle radians) radians
+	^ (self rads + aGAngle rads) rads
 ]
 
 { #category : #arithmetic }
 GAngle >> cos [
-	^ self radians cos
+	^ self rads cos
 ]
 
 { #category : #converting }
 GAngle >> degreeNumber [
-	^ self radians radiansToDegrees
+	^ self rads radiansToDegrees
 ]
 
 { #category : #accessing }
 GAngle >> explementary [
-	^ (0 - self radians) radians
+	^ (0 - self rads) rads
 ]
 
 { #category : #comparing }
@@ -171,7 +176,7 @@ GAngle >> initializeWith: aNumber [
 
 { #category : #testing }
 GAngle >> isAcute [
-	^ self > 0 radians and: [ self < RightAngle ]
+	^ self > 0 rads and: [ self < RightAngle ]
 ]
 
 { #category : #testing }
@@ -181,7 +186,7 @@ GAngle >> isObtuse [
 
 { #category : #testing }
 GAngle >> isReflex [
-	^ self > StraightAngle and: [ self radians < TwoPi ]
+	^ self > StraightAngle and: [ self rads < TwoPi ]
 ]
 
 { #category : #testing }
@@ -213,25 +218,38 @@ GAngle >> printOn: aStream [
 
 { #category : #converting }
 GAngle >> radianNumber [
-	^ self radians
+
+	self
+		deprecated: 'Please use #rads instead'
+		transformWith: '`@receiver radianNumber' -> '`@receiver rads'.
+	^ self rads
 ]
 
 { #category : #accessing }
 GAngle >> radians [
+
+	self
+		deprecated: 'Please use #rads instead'
+		transformWith: '`@receiver radians' -> '`@receiver rads'.
+	^ self rads
+]
+
+{ #category : #accessing }
+GAngle >> rads [
 	^ radians
 ]
 
 { #category : #arithmetic }
 GAngle >> sin [
-	^ self radians sin
+	^ self rads sin
 ]
 
 { #category : #arithmetic }
 GAngle >> substractWithAngle: aGAngle [ 
-	^ (aGAngle radians - self radians) radians
+	^ (aGAngle rads - self rads) rads
 ]
 
 { #category : #arithmetic }
 GAngle >> tan [
-	^ self radians tan
+	^ self rads tan
 ]
